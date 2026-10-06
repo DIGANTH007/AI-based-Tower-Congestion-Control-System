@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Traffic Control | AI Tower</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            ⚡
+        </div>
+
+        <div>
+
+            <h2>AI TOWER</h2>
+
+            <span>
+                TRAFFIC CONTROL
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="navigation">
+
+        <a
+            class="nav-item"
+            href="/"
+        >
+            <span>⌂</span>
+            Dashboard
+        </a>
+
+
+        <a
+            class="nav-item"
+            href="/"
+        >
+            <span>◉</span>
+            Tower Network
+        </a>
+
+
+        <a
+            class="nav-item"
+            href="../index.html"
+        >
+            <span>◇</span>
+            AI Intelligence
+        </a>
+
+
+        <a
+            class="nav-item active"
+            href="index.html"
+        >
+            <span>⚡</span>
+            Traffic Control
+        </a>
+
+
+        <a
+            class="nav-item"
+            href="/ai_intelligence/traffic_control/analytics/index.html"
+        >
+            <span>▣</span>
+            Analytics
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            <div>
+
+                <strong>
+                    CONTROL ENGINE ONLINE
+                </strong>
+
+                <small>
+                    Traffic optimization active
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <header class="topbar">
+
+        <div>
+
+            <p class="eyebrow">
+                NETWORK TRAFFIC MANAGEMENT
+            </p>
+
+            <h1>
+                Traffic Control Center
+            </h1>
+
+            <p class="subtitle">
+                Real-time traffic monitoring and intelligent tower redistribution
+            </p>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <div class="live-indicator">
+
+                <span></span>
+
+                CONTROL ONLINE
+
+            </div>
+
+
+            <div
+                class="live-clock"
+                id="live-clock"
+            >
+                --:--:--
+            </div>
+
+
+            <div class="profile">
+                TC
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         CONTROL STATUS
+    ================================================== -->
+
+    <section class="status-grid">
+
+
+        <div class="status-card">
+
+            <div class="status-card-top">
+
+                <span>
+                    ACTIVE TOWERS
+                </span>
+
+                <div class="status-icon blue">
+                    ◉
+                </div>
+
+            </div>
+
+            <strong id="active-towers">
+                --
+            </strong>
+
+            <small>
+                Connected network towers
+            </small>
+
+        </div>
+
+
+
+        <div class="status-card">
+
+            <div class="status-card-top">
+
+                <span>
+                    NETWORK LOAD
+                </span>
+
+                <div class="status-icon cyan">
+                    %
+                </div>
+
+            </div>
+
+            <strong id="network-load">
+                --
+            </strong>
+
+            <small>
+                Current network utilization
+            </small>
+
+        </div>
+
+
+
+        <div class="status-card">
+
+            <div class="status-card-top">
+
+                <span>
+                    CONGESTED
+                </span>
+
+                <div class="status-icon red">
+                    !
+                </div>
+
+            </div>
+
+            <strong id="congested-towers">
+                --
+            </strong>
+
+            <small>
+                Towers requiring attention
+            </small>
+
+        </div>
+
+
+
+        <div class="status-card">
+
+            <div class="status-card-top">
+
+                <span>
+                    CONTROL MODE
+                </span>
+
+                <div class="status-icon purple">
+                    AI
+                </div>
+
+            </div>
+
+            <strong>
+                AUTO
+            </strong>
+
+            <small>
+                Intelligent optimization enabled
+            </small>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         TRAFFIC OVERVIEW
+    ================================================== -->
+
+    <section class="panel traffic-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-label">
+                    LIVE TRAFFIC
+                </span>
+
+                <h2>
+                    Tower Traffic Distribution
+                </h2>
+
+                <p>
+                    Monitor traffic load and available capacity across the network
+                </p>
+
+            </div>
+
+
+            <div class="panel-live">
+                ● LIVE
+            </div>
+
+        </div>
+
+
+        <div
+            class="tower-traffic-grid"
+            id="tower-traffic-grid"
+        >
+
+            <!-- JavaScript inserts tower traffic cards -->
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         REDISTRIBUTION CONTROL
+    ================================================== -->
+
+    <section class="control-grid">
+
+
+        <!-- SOURCE TOWER -->
+
+        <div class="panel control-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        SOURCE TOWER
+                    </span>
+
+                    <h2>
+                        Congested Tower
+                    </h2>
+
+                    <p>
+                        Select the tower requiring traffic relief
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="tower-selector">
+
+                <label for="source-tower">
+                    SOURCE TOWER
+                </label>
+
+                <select id="source-tower">
+
+                    <option value="">
+                        Select congested tower
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                class="tower-detail"
+                id="source-detail"
+            >
+
+                <div class="empty-state">
+                    Select a source tower to view its status.
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TARGET TOWER -->
+
+        <div class="panel control-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        TARGET TOWER
+                    </span>
+
+                    <h2>
+                        Available Capacity
+                    </h2>
+
+                    <p>
+                        Select a nearby tower for redistribution
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="tower-selector">
+
+                <label for="target-tower">
+                    TARGET TOWER
+                </label>
+
+                <select id="target-tower">
+
+                    <option value="">
+                        Select target tower
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                class="tower-detail"
+                id="target-detail"
+            >
+
+                <div class="empty-state">
+                    Select a target tower to view its capacity.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         REDISTRIBUTION ACTION
+    ================================================== -->
+
+    <section class="panel redistribution-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-label">
+                    TRAFFIC REDISTRIBUTION
+                </span>
+
+                <h2>
+                    Intelligent Traffic Transfer
+                </h2>
+
+                <p>
+                    Move network users from a congested tower to an available tower
+                </p>
+
+            </div>
+
+
+            <div
+                class="transfer-status"
+                id="transfer-status"
+            >
+                STANDBY
+            </div>
+
+        </div>
+
+
+        <div class="transfer-visual">
+
+
+            <div class="transfer-node">
+
+                <div class="node-icon source">
+                    T
+                </div>
+
+                <strong id="transfer-source">
+                    SOURCE
+                </strong>
+
+                <small>
+                    Congested tower
+                </small>
+
+            </div>
+
+
+            <div class="transfer-line">
+
+                <span class="transfer-arrow">
+                    →
+                </span>
+
+                <div class="transfer-progress">
+
+                    <div
+                        id="transfer-progress-fill"
+                    ></div>
+
+                </div>
+
+                <small>
+                    AI TRAFFIC ROUTING
+                </small>
+
+            </div>
+
+
+            <div class="transfer-node">
+
+                <div class="node-icon target">
+                    T
+                </div>
+
+                <strong id="transfer-target">
+                    TARGET
+                </strong>
+
+                <small>
+                    Available capacity
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="transfer-controls">
+
+            <div class="transfer-amount">
+
+                <label for="transfer-amount">
+                    USERS TO TRANSFER
+                </label>
+
+                <input
+                    type="number"
+                    id="transfer-amount"
+                    value="10"
+                    min="1"
+                    max="20"
+                >
+
+            </div>
+
+
+            <button
+                class="primary-button"
+                id="redistribute-button"
+                onclick="redistributeTraffic()"
+            >
+                REDISTRIBUTE TRAFFIC
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CONTROL EVENTS
+    ================================================== -->
+
+    <section class="panel events-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-label">
+                    CONTROL EVENTS
+                </span>
+
+                <h2>
+                    Traffic Management Activity
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="events-list"
+            id="events-list"
+        >
+
+            <div class="event-item">
+
+                <span class="event-dot green"></span>
+
+                <div>
+
+                    <strong>
+                        Traffic control engine initialized
+                    </strong>
+
+                    <small>
+                        Waiting for network control commands
+                    </small>
+
+                </div>
+
+                <time>
+                    NOW
+                </time>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>

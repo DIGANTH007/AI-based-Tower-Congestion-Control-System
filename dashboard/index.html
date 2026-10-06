@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Tower Congestion Control</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            ◈
+        </div>
+
+        <div>
+
+            <h2>AI TOWER</h2>
+
+            <span>
+                CONGESTION CONTROL
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="navigation">
+
+        <button
+            class="nav-item active"
+            id="dashboard-nav"
+        >
+
+            <span>⌂</span>
+
+            Dashboard
+
+        </button>
+
+
+        <button
+            class="nav-item"
+            id="tower-network-nav"
+        >
+
+            <span>◉</span>
+
+            Tower Network
+
+        </button>
+
+
+        <button class="nav-item" onclick="window.location.href='/ai_intelligence/index.html'">
+
+            <span>◇</span>
+
+            AI Intelligence
+
+        </button>
+
+
+        <button class="nav-item" onclick="window.location.href='/ai_intelligence/traffic_control/index.html'">
+
+            <span>⚡</span>
+
+            Traffic Control
+
+        </button>
+
+
+        <button class="nav-item" onclick="window.location.href='/ai_intelligence/traffic_control/analytics/index.html'">
+
+            <span>▣</span>
+
+            Analytics
+
+        </button>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            <div>
+
+                <strong>
+                    AI SYSTEM ONLINE
+                </strong>
+
+                <small>
+                    Network monitoring active
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="main">
+
+
+<!-- =========================================================
+     DASHBOARD VIEW
+========================================================= -->
+
+<div id="dashboard-view">
+
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <div>
+
+            <p class="eyebrow">
+                NETWORK INTELLIGENCE
+            </p>
+
+            <h1>
+                Network Intelligence Dashboard
+            </h1>
+
+            <p class="subtitle">
+                AI-powered real-time cellular tower congestion monitoring
+            </p>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <div class="live-indicator">
+
+                <span></span>
+
+                LIVE
+
+            </div>
+
+
+            <div
+                class="live-clock"
+                id="live-clock"
+            >
+                --:--:--
+            </div>
+
+
+            <div class="profile">
+                DR
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         KPI CARDS
+    ====================================================== -->
+
+    <section class="kpi-grid">
+
+
+        <div class="kpi-card">
+
+            <div class="kpi-top">
+
+                <span>
+                    ACTIVE TOWERS
+                </span>
+
+                <div class="kpi-icon">
+                    ◉
+                </div>
+
+            </div>
+
+
+            <div
+                class="kpi-value"
+                id="tower-count"
+            >
+                0
+            </div>
+
+
+            <div class="kpi-footer">
+                All monitored towers
+            </div>
+
+        </div>
+
+
+
+        <div class="kpi-card">
+
+            <div class="kpi-top">
+
+                <span>
+                    CONNECTED USERS
+                </span>
+
+                <div class="kpi-icon">
+                    ♙
+                </div>
+
+            </div>
+
+
+            <div
+                class="kpi-value"
+                id="user-count"
+            >
+                0
+            </div>
+
+
+            <div class="kpi-footer">
+                Network-wide users
+            </div>
+
+        </div>
+
+
+
+        <div class="kpi-card">
+
+            <div class="kpi-top">
+
+                <span>
+                    AVERAGE LOAD
+                </span>
+
+                <div class="kpi-icon">
+                    ↗
+                </div>
+
+            </div>
+
+
+            <div
+                class="kpi-value"
+                id="network-load"
+            >
+                0%
+            </div>
+
+
+            <div class="progress">
+
+                <div
+                    class="progress-fill"
+                    id="network-load-bar"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="kpi-card">
+
+            <div class="kpi-top">
+
+                <span>
+                    CONGESTED TOWERS
+                </span>
+
+                <div class="kpi-icon warning">
+                    !
+                </div>
+
+            </div>
+
+
+            <div
+                class="kpi-value"
+                id="congested-count"
+            >
+                0
+            </div>
+
+
+            <div class="kpi-footer">
+                HIGH + MEDIUM
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MAIN DASHBOARD GRID
+    ====================================================== -->
+
+    <section class="dashboard-grid">
+
+
+        <!-- GOOGLE MAP -->
+
+        <div class="panel map-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        LIVE NETWORK INTELLIGENCE
+                    </span>
+
+                    <h2>
+                        AI Tower Network Map
+                    </h2>
+
+                    <p>
+                        Real-time geographical network monitoring
+                    </p>
+
+                </div>
+
+
+                <div class="panel-live">
+                    ● LIVE
+                </div>
+
+            </div>
+
+
+            <div class="map-container">
+
+                <div id="network-map"></div>
+
+
+                <div
+                    class="map-fallback"
+                    id="map-fallback"
+                >
+
+                    <div class="fallback-icon">
+                        ◉
+                    </div>
+
+                    <strong>
+                        NETWORK RADAR
+                    </strong>
+
+                    <span>
+                        Loading tower locations...
+                    </span>
+
+                </div>
+
+
+                <div class="radar-overlay">
+
+                    <div class="radar-ring ring-1"></div>
+
+                    <div class="radar-ring ring-2"></div>
+
+                    <div class="radar-ring ring-3"></div>
+
+                    <div class="radar-sweep"></div>
+
+                    <div class="radar-center"></div>
+
+                </div>
+
+
+                <div class="map-hud top-left">
+
+                    <span>
+                        NETWORK SCAN
+                    </span>
+
+                    <strong>
+                        ACTIVE
+                    </strong>
+
+                </div>
+
+
+                <div class="map-hud bottom-right">
+
+                    <span>
+                        BENGALURU REGION
+                    </span>
+
+                    <strong>
+                        6 TOWERS
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- AI PANEL -->
+
+        <div class="panel ai-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        AI INTELLIGENCE
+                    </span>
+
+                    <h2>
+                        AI Network Analysis
+                    </h2>
+
+                    <p>
+                        Machine-learning congestion intelligence
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="ai-engine">
+
+                <div class="ai-icon">
+                    AI
+                </div>
+
+                <div>
+
+                    <strong>
+                        AI ENGINE ACTIVE
+                    </strong>
+
+                    <span>
+                        Continuously analyzing tower conditions
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="prediction-list">
+
+                <div class="prediction-row">
+
+                    <span>
+                        HIGH CONGESTION
+                    </span>
+
+                    <strong id="high-count">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="prediction-row">
+
+                    <span>
+                        MEDIUM CONGESTION
+                    </span>
+
+                    <strong id="medium-count">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="prediction-row">
+
+                    <span>
+                        LOW CONGESTION
+                    </span>
+
+                    <strong id="low-count">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="network-risk">
+
+                <div class="risk-header">
+
+                    <span>
+                        NETWORK RISK
+                    </span>
+
+                    <strong id="ai-risk-level">
+                        LOW
+                    </strong>
+
+                </div>
+
+
+                <div class="risk-bar">
+
+                    <div id="risk-bar-fill"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="recommendation">
+
+                <span>
+                    AI RECOMMENDATION
+                </span>
+
+                <p id="ai-recommendation">
+                    Waiting for live network analysis...
+                </p>
+
+            </div>
+
+
+            <button
+                class="primary-button"
+                id="analyze-button"
+            >
+                ANALYZE SELECTED TOWER
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TOWER STATUS
+    ====================================================== -->
+
+    <section class="panel tower-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-label">
+                    CELLULAR NETWORK
+                </span>
+
+                <h2>
+                    Tower Monitoring
+                </h2>
+
+                <p>
+                    Select a congested tower for AI optimization
+                </p>
+
+            </div>
+
+
+            <div class="panel-live">
+                ● LIVE DATA
+            </div>
+
+        </div>
+
+
+        <div
+            class="tower-grid"
+            id="tower-grid"
+        >
+
+            <!-- JavaScript inserts tower cards -->
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BOTTOM GRID
+    ====================================================== -->
+
+    <section class="bottom-grid">
+
+
+        <!-- AI ACTION -->
+
+        <div class="panel action-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        AI ACTION CENTER
+                    </span>
+
+                    <h2>
+                        Traffic Optimization
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="action-card">
+
+                <div class="action-icon">
+                    ↗
+                </div>
+
+
+                <div class="action-content">
+
+                    <h3 id="action-title">
+                        Select a congested tower
+                    </h3>
+
+                    <p id="action-description">
+                        Select a HIGH or MEDIUM congestion tower above to begin AI traffic optimization.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="primary-button"
+                id="redistribute-button"
+                disabled
+            >
+                REDISTRIBUTE TRAFFIC
+            </button>
+
+        </div>
+
+
+
+        <!-- ACTIVITY -->
+
+        <div class="panel activity-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        SYSTEM ACTIVITY
+                    </span>
+
+                    <h2>
+                        Live Events
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="activity-list"
+                id="activity-list"
+            >
+
+                <div class="activity-item">
+
+                    <span class="activity-dot green"></span>
+
+                    <div>
+
+                        <strong>
+                            AI system initialized
+                        </strong>
+
+                        <small>
+                            Network monitoring active
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                    <span class="activity-dot blue"></span>
+
+                    <div>
+
+                        <strong>
+                            Tower network connected
+                        </strong>
+
+                        <small>
+                            Six towers available
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                    <span class="activity-dot purple"></span>
+
+                    <div>
+
+                        <strong>
+                            AI model ready
+                        </strong>
+
+                        <small>
+                            Congestion prediction active
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+
+<!-- =========================================================
+     TOWER NETWORK VIEW
+========================================================= -->
+
+<section
+    id="tower-network-view"
+    class="tower-network-view"
+>
+
+
+    <header class="network-page-header">
+
+        <div>
+
+            <p class="eyebrow">
+                NETWORK TOPOLOGY
+            </p>
+
+            <h1>
+                Tower Network
+            </h1>
+
+            <p class="subtitle">
+                Complete live view of the cellular tower infrastructure
+            </p>
+
+        </div>
+
+
+        <div class="network-status-badge">
+
+            <span></span>
+
+            NETWORK ONLINE
+
+        </div>
+
+    </header>
+
+
+
+    <!-- NETWORK OVERVIEW -->
+
+    <section class="network-overview">
+
+
+        <div class="overview-card">
+
+            <span>
+                ACTIVE TOWERS
+            </span>
+
+            <strong id="network-active-towers">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="overview-card">
+
+            <span>
+                TOTAL USERS
+            </span>
+
+            <strong id="network-total-users">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="overview-card">
+
+            <span>
+                AVERAGE LOAD
+            </span>
+
+            <strong id="network-average-load">
+                0%
+            </strong>
+
+        </div>
+
+
+        <div class="overview-card">
+
+            <span>
+                CONGESTED TOWERS
+            </span>
+
+            <strong id="network-congested-towers">
+                0
+            </strong>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TOWER NETWORK CARDS -->
+
+    <section class="panel network-towers-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-label">
+                    LIVE INFRASTRUCTURE
+                </span>
+
+                <h2>
+                    Tower Network Status
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="tower-network-grid"
+            id="tower-network-grid"
+        >
+
+            <!-- JavaScript inserts cards -->
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TOPOLOGY -->
+
+    <section class="panel topology-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-label">
+                    NETWORK TOPOLOGY
+                </span>
+
+                <h2>
+                    AI Tower Connectivity
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="network-topology">
+
+            <div class="topology-line line-1"></div>
+            <div class="topology-line line-2"></div>
+            <div class="topology-line line-3"></div>
+            <div class="topology-line line-4"></div>
+            <div class="topology-line line-5"></div>
+            <div class="topology-line line-6"></div>
+
+
+            <div
+                class="network-node node-t01"
+                data-tower="T01"
+            >
+                <span></span>
+                <strong>T01</strong>
+                <small>--</small>
+            </div>
+
+
+            <div
+                class="network-node node-t02"
+                data-tower="T02"
+            >
+                <span></span>
+                <strong>T02</strong>
+                <small>--</small>
+            </div>
+
+
+            <div
+                class="network-node node-t03"
+                data-tower="T03"
+            >
+                <span></span>
+                <strong>T03</strong>
+                <small>--</small>
+            </div>
+
+
+            <div
+                class="network-node node-t04"
+                data-tower="T04"
+            >
+                <span></span>
+                <strong>T04</strong>
+                <small>--</small>
+            </div>
+
+
+            <div
+                class="network-node node-t05"
+                data-tower="T05"
+            >
+                <span></span>
+                <strong>T05</strong>
+                <small>--</small>
+            </div>
+
+
+            <div
+                class="network-node node-t06"
+                data-tower="T06"
+            >
+                <span></span>
+                <strong>T06</strong>
+                <small>--</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SELECTED NETWORK TOWER -->
+
+    <section class="panel selected-tower-panel">
+
+        <div class="selected-tower-header">
+
+            <div>
+
+                <span class="panel-label">
+                    SELECTED TOWER
+                </span>
+
+                <h2 id="selected-network-id">
+                    No tower selected
+                </h2>
+
+            </div>
+
+
+            <span
+                id="selected-network-status"
+                class="selected-status"
+            >
+                Select a tower above
+            </span>
+
+        </div>
+
+
+        <div class="selected-metrics">
+
+
+            <div>
+
+                <span>
+                    USERS
+                </span>
+
+                <strong id="selected-network-users">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    NETWORK LOAD
+                </span>
+
+                <strong id="selected-network-load">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    LATENCY
+                </span>
+
+                <strong id="selected-network-latency">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    TRAFFIC
+                </span>
+
+                <strong id="selected-network-traffic">
+                    --
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     APPLICATION JAVASCRIPT
+========================================================= -->
+
+<script src="app.js"></script>
+
+
+<!-- =========================================================
+     GOOGLE MAPS
+     
+     Replace the placeholder with your own restricted key.
+     Do NOT send the key to me.
+========================================================= -->
+
+<script
+    async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcjUfK2K6kfdMDcWdefo6_Q2cRgwjerDY&loading=async&libraries=marker&callback=initMap"
+></script>
+
+
+</body>
+</html>

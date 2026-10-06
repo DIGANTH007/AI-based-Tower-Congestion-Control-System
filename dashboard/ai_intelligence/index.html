@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Intelligence | Tower Control</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            ◈
+        </div>
+
+        <div>
+
+            <h2>AI TOWER</h2>
+
+            <span>
+                INTELLIGENCE CENTER
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="navigation">
+
+        <a
+            class="nav-item"
+            href="/"
+        >
+
+            <span>⌂</span>
+
+            Dashboard
+
+        </a>
+
+
+        <a
+            class="nav-item"
+            href="/"
+        >
+
+            <span>◉</span>
+
+            Tower Network
+
+        </a>
+
+
+        <a
+            class="nav-item active"
+            href="index.html"
+        >
+
+            <span>◇</span>
+
+            AI Intelligence
+
+        </a>
+
+
+        <a
+            class="nav-item"
+            href="traffic_control/index.html"
+        >
+
+            <span>⚡</span>
+
+            Traffic Control
+
+        </a>
+
+
+        <a
+            class="nav-item"
+            href="traffic_control/analytics/index.html"
+        >
+
+            <span>▣</span>
+
+            Analytics
+
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            <div>
+
+                <strong>
+                    AI ENGINE ONLINE
+                </strong>
+
+                <small>
+                    Prediction system active
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+
+    <!-- TOP HEADER -->
+
+    <header class="topbar">
+
+        <div>
+
+            <p class="eyebrow">
+                ARTIFICIAL INTELLIGENCE
+            </p>
+
+            <h1>
+                AI Intelligence Center
+            </h1>
+
+            <p class="subtitle">
+                Machine-learning powered network congestion intelligence
+            </p>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <div class="live-indicator">
+
+                <span></span>
+
+                AI ONLINE
+
+            </div>
+
+
+            <div
+                class="live-clock"
+                id="live-clock"
+            >
+                --:--:--
+            </div>
+
+
+            <div class="profile">
+                AI
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         AI STATUS CARDS
+    ================================================== -->
+
+    <section class="status-grid">
+
+
+        <div class="status-card">
+
+            <div class="status-card-top">
+
+                <span>
+                    AI ENGINE
+                </span>
+
+                <div class="status-icon blue">
+                    AI
+                </div>
+
+            </div>
+
+
+            <strong>
+                ACTIVE
+            </strong>
+
+
+            <small>
+                Continuous network analysis
+            </small>
+
+        </div>
+
+
+
+        <div class="status-card">
+
+            <div class="status-card-top">
+
+                <span>
+                    MODEL ACCURACY
+                </span>
+
+                <div class="status-icon purple">
+                    %
+                </div>
+
+            </div>
+
+
+            <strong>
+                91.0%
+            </strong>
+
+
+            <small>
+                Trained congestion classifier
+            </small>
+
+        </div>
+
+
+
+        <div class="status-card">
+
+            <div class="status-card-top">
+
+                <span>
+                    PREDICTIONS
+                </span>
+
+                <div class="status-icon cyan">
+                    ◇
+                </div>
+
+            </div>
+
+
+            <strong id="prediction-count">
+                0
+            </strong>
+
+
+            <small>
+                Network predictions processed
+            </small>
+
+        </div>
+
+
+
+        <div class="status-card">
+
+            <div class="status-card-top">
+
+                <span>
+                    NETWORK RISK
+                </span>
+
+                <div class="status-icon red">
+                    !
+                </div>
+
+            </div>
+
+
+            <strong id="network-risk">
+                LOW
+            </strong>
+
+
+            <small>
+                Current AI assessment
+            </small>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         AI ANALYSIS + MODEL
+    ================================================== -->
+
+    <section class="main-grid">
+
+
+        <!-- AI ANALYSIS -->
+
+        <div class="panel analysis-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        LIVE AI ANALYSIS
+                    </span>
+
+                    <h2>
+                        Network Intelligence
+                    </h2>
+
+                    <p>
+                        Current AI interpretation of cellular network conditions
+                    </p>
+
+                </div>
+
+
+                <div class="panel-live">
+                    ● ANALYZING
+                </div>
+
+            </div>
+
+
+            <div class="analysis-content">
+
+
+                <div class="ai-core">
+
+                    <div class="core-ring ring-one"></div>
+
+                    <div class="core-ring ring-two"></div>
+
+                    <div class="core-ring ring-three"></div>
+
+
+                    <div class="core-center">
+
+                        <strong>
+                            AI
+                        </strong>
+
+                        <span>
+                            ENGINE
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="analysis-summary">
+
+                    <span>
+                        CURRENT ASSESSMENT
+                    </span>
+
+                    <h3 id="assessment-title">
+                        Network analysis in progress
+                    </h3>
+
+                    <p id="assessment-text">
+                        The AI engine is evaluating tower load, connected users, traffic and latency.
+                    </p>
+
+
+                    <div class="confidence">
+
+                        <div class="confidence-header">
+
+                            <span>
+                                PREDICTION CONFIDENCE
+                            </span>
+
+                            <strong id="confidence-value">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="confidence-track">
+
+                            <div
+                                id="confidence-fill"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MODEL INPUTS -->
+
+        <div class="panel model-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        ML MODEL
+                    </span>
+
+                    <h2>
+                        Model Inputs
+                    </h2>
+
+                    <p>
+                        Parameters used by the AI classifier
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="model-inputs">
+
+
+                <div class="input-metric">
+
+                    <div>
+
+                        <span>
+                            USERS
+                        </span>
+
+                        <small>
+                            Connected devices
+                        </small>
+
+                    </div>
+
+                    <strong id="model-users">
+                        --
+                    </strong>
+
+                </div>
+
+
+
+                <div class="input-metric">
+
+                    <div>
+
+                        <span>
+                            BANDWIDTH
+                        </span>
+
+                        <small>
+                            Network utilization
+                        </small>
+
+                    </div>
+
+                    <strong id="model-bandwidth">
+                        --
+                    </strong>
+
+                </div>
+
+
+
+                <div class="input-metric">
+
+                    <div>
+
+                        <span>
+                            LATENCY
+                        </span>
+
+                        <small>
+                            Network response
+                        </small>
+
+                    </div>
+
+                    <strong id="model-latency">
+                        --
+                    </strong>
+
+                </div>
+
+
+
+                <div class="input-metric">
+
+                    <div>
+
+                        <span>
+                            TRAFFIC
+                        </span>
+
+                        <small>
+                            Traffic intensity
+                        </small>
+
+                    </div>
+
+                    <strong id="model-traffic">
+                        --
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         TOWER PREDICTIONS
+    ================================================== -->
+
+    <section class="panel prediction-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-label">
+                    AI PREDICTIONS
+                </span>
+
+                <h2>
+                    Tower Congestion Intelligence
+                </h2>
+
+                <p>
+                    AI classification for each monitored cellular tower
+                </p>
+
+            </div>
+
+
+            <div class="panel-live">
+                ● LIVE PREDICTIONS
+            </div>
+
+        </div>
+
+
+        <div
+            class="prediction-grid"
+            id="prediction-grid"
+        >
+
+            <!-- JavaScript inserts tower predictions -->
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         AI RECOMMENDATION + DECISION
+    ================================================== -->
+
+    <section class="bottom-grid">
+
+
+        <!-- RECOMMENDATION -->
+
+        <div class="panel recommendation-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        AI RECOMMENDATION
+                    </span>
+
+                    <h2>
+                        Recommended Action
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="recommendation-content">
+
+                <div class="recommendation-icon">
+                    ◇
+                </div>
+
+
+                <div>
+
+                    <h3 id="recommendation-title">
+                        Waiting for network analysis
+                    </h3>
+
+                    <p id="recommendation-text">
+                        AI recommendations will appear after the network is analyzed.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="primary-button"
+                id="run-analysis"
+            >
+                RUN AI ANALYSIS
+            </button>
+
+        </div>
+
+
+
+        <!-- AI DECISION -->
+
+        <div class="panel decision-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        AI DECISION
+                    </span>
+
+                    <h2>
+                        Decision Engine
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="decision-list">
+
+
+                <div class="decision-item">
+
+                    <div class="decision-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Detect
+                        </strong>
+
+                        <span>
+                            Identify abnormal tower congestion
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="decision-status"
+                        id="decision-detect"
+                    >
+                        READY
+                    </div>
+
+                </div>
+
+
+
+                <div class="decision-item">
+
+                    <div class="decision-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Predict
+                        </strong>
+
+                        <span>
+                            Estimate congestion severity
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="decision-status"
+                        id="decision-predict"
+                    >
+                        READY
+                    </div>
+
+                </div>
+
+
+
+                <div class="decision-item">
+
+                    <div class="decision-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Recommend
+                        </strong>
+
+                        <span>
+                            Generate optimal network action
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="decision-status"
+                        id="decision-recommend"
+                    >
+                        READY
+                    </div>
+
+                </div>
+
+
+
+                <div class="decision-item">
+
+                    <div class="decision-number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Optimize
+                        </strong>
+
+                        <span>
+                            Prepare traffic redistribution
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="decision-status"
+                        id="decision-optimize"
+                    >
+                        READY
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         AI ACTIVITY
+    ================================================== -->
+
+    <section class="panel activity-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-label">
+                    AI ACTIVITY
+                </span>
+
+                <h2>
+                    Intelligence Events
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="activity-list"
+            id="activity-list"
+        >
+
+            <div class="activity-item">
+
+                <span class="activity-dot green"></span>
+
+                <div>
+
+                    <strong>
+                        AI engine initialized
+                    </strong>
+
+                    <small>
+                        Waiting for network telemetry
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <span class="activity-dot blue"></span>
+
+                <div>
+
+                    <strong>
+                        ML classifier ready
+                    </strong>
+
+                    <small>
+                        Congestion prediction system online
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>

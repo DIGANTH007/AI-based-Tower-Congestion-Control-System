@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Analytics | AI Tower</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            ▣
+        </div>
+
+        <div>
+
+            <h2>AI TOWER</h2>
+
+            <span>
+                NETWORK ANALYTICS
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="navigation">
+
+        <a
+            class="nav-item"
+            href="/"
+        >
+
+            <span>⌂</span>
+
+            Dashboard
+
+        </a>
+
+
+        <a
+            class="nav-item"
+            href="/"
+        >
+
+            <span>◉</span>
+
+            Tower Network
+
+        </a>
+
+
+        <a
+            class="nav-item"
+            href="/ai_intelligence/index.html"
+        >
+
+            <span>◇</span>
+
+            AI Intelligence
+
+        </a>
+
+
+        <a
+            class="nav-item"
+            href="/ai_intelligence/traffic_control/index.html"
+        >
+
+            <span>⚡</span>
+
+            Traffic Control
+
+        </a>
+
+
+        <a
+            class="nav-item active"
+            href="/ai_intelligence/traffic_control/analytics/index.html"
+        >
+
+            <span>▣</span>
+
+            Analytics
+
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            <div>
+
+                <strong>
+                    ANALYTICS ONLINE
+                </strong>
+
+                <small>
+                    Network telemetry active
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <header class="topbar">
+
+        <div>
+
+            <p class="eyebrow">
+                NETWORK PERFORMANCE INTELLIGENCE
+            </p>
+
+            <h1>
+                Analytics Center
+            </h1>
+
+            <p class="subtitle">
+                Network performance, traffic trends and tower utilization analytics
+            </p>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <div class="live-indicator">
+
+                <span></span>
+
+                LIVE DATA
+
+            </div>
+
+
+            <div
+                class="live-clock"
+                id="live-clock"
+            >
+                --:--:--
+            </div>
+
+
+            <div class="profile">
+                AN
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         KPI CARDS
+    ================================================== -->
+
+    <section class="kpi-grid">
+
+
+        <div class="kpi-card">
+
+            <div class="kpi-top">
+
+                <span>
+                    TOTAL USERS
+                </span>
+
+                <div class="kpi-icon blue">
+                    U
+                </div>
+
+            </div>
+
+
+            <strong id="total-users">
+                --
+            </strong>
+
+
+            <small>
+                Connected network devices
+            </small>
+
+        </div>
+
+
+
+        <div class="kpi-card">
+
+            <div class="kpi-top">
+
+                <span>
+                    AVERAGE LOAD
+                </span>
+
+                <div class="kpi-icon cyan">
+                    %
+                </div>
+
+            </div>
+
+
+            <strong id="average-load">
+                --
+            </strong>
+
+
+            <small>
+                Network utilization
+            </small>
+
+        </div>
+
+
+
+        <div class="kpi-card">
+
+            <div class="kpi-top">
+
+                <span>
+                    TOTAL TRAFFIC
+                </span>
+
+                <div class="kpi-icon purple">
+                    ↕
+                </div>
+
+            </div>
+
+
+            <strong id="total-traffic">
+                --
+            </strong>
+
+
+            <small>
+                Current network throughput
+            </small>
+
+        </div>
+
+
+
+        <div class="kpi-card">
+
+            <div class="kpi-top">
+
+                <span>
+                    AVG LATENCY
+                </span>
+
+                <div class="kpi-icon green">
+                    ms
+                </div>
+
+            </div>
+
+
+            <strong id="average-latency">
+                --
+            </strong>
+
+
+            <small>
+                Network response time
+            </small>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         LOAD ANALYTICS
+    ================================================== -->
+
+    <section class="analytics-grid">
+
+
+        <!-- TOWER LOAD -->
+
+        <div class="panel chart-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        TOWER UTILIZATION
+                    </span>
+
+                    <h2>
+                        Current Tower Load
+                    </h2>
+
+                    <p>
+                        Comparative network utilization across all monitored towers
+                    </p>
+
+                </div>
+
+
+                <div class="panel-live">
+                    ● LIVE
+                </div>
+
+            </div>
+
+
+            <div
+                class="tower-bars"
+                id="tower-bars"
+            >
+
+                <!-- JavaScript creates bars -->
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NETWORK HEALTH -->
+
+        <div class="panel health-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        NETWORK HEALTH
+                    </span>
+
+                    <h2>
+                        System Health
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="health-score">
+
+                <div class="health-circle">
+
+                    <div>
+
+                        <strong id="health-score">
+                            --
+                        </strong>
+
+                        <span>
+                            SCORE
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="health-items">
+
+                <div class="health-item">
+
+                    <span>
+                        Tower Availability
+                    </span>
+
+                    <strong id="availability-value">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="health-item">
+
+                    <span>
+                        Congestion Level
+                    </span>
+
+                    <strong id="congestion-value">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="health-item">
+
+                    <span>
+                        Latency Health
+                    </span>
+
+                    <strong id="latency-health">
+                        --
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PERFORMANCE TABLE
+    ================================================== -->
+
+    <section class="panel performance-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-label">
+                    TOWER PERFORMANCE
+                </span>
+
+                <h2>
+                    Network Performance Overview
+                </h2>
+
+                <p>
+                    Detailed performance metrics for each tower
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            TOWER
+                        </th>
+
+                        <th>
+                            USERS
+                        </th>
+
+                        <th>
+                            LOAD
+                        </th>
+
+                        <th>
+                            TRAFFIC
+                        </th>
+
+                        <th>
+                            LATENCY
+                        </th>
+
+                        <th>
+                            STATUS
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody
+                    id="performance-table"
+                >
+
+                    <!-- JavaScript inserts rows -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ANALYTICS SUMMARY
+    ================================================== -->
+
+    <section class="summary-grid">
+
+
+        <div class="panel summary-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        TRAFFIC DISTRIBUTION
+                    </span>
+
+                    <h2>
+                        Network Traffic Share
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="distribution-list"
+                id="distribution-list"
+            >
+
+                <!-- JavaScript inserts distribution -->
+
+            </div>
+
+        </div>
+
+
+
+        <div class="panel summary-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        AI PERFORMANCE
+                    </span>
+
+                    <h2>
+                        Intelligence Metrics
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="ai-metrics">
+
+
+                <div class="metric-row">
+
+                    <div>
+
+                        <span>
+                            MODEL ACCURACY
+                        </span>
+
+                        <small>
+                            Congestion classifier
+                        </small>
+
+                    </div>
+
+                    <strong>
+                        91.0%
+                    </strong>
+
+                </div>
+
+
+
+                <div class="metric-row">
+
+                    <div>
+
+                        <span>
+                            PREDICTION STATUS
+                        </span>
+
+                        <small>
+                            Real-time classification
+                        </small>
+
+                    </div>
+
+                    <strong class="green-text">
+                        ACTIVE
+                    </strong>
+
+                </div>
+
+
+
+                <div class="metric-row">
+
+                    <div>
+
+                        <span>
+                            DECISION ENGINE
+                        </span>
+
+                        <small>
+                            Network optimization
+                        </small>
+
+                    </div>
+
+                    <strong class="green-text">
+                        ONLINE
+                    </strong>
+
+                </div>
+
+
+
+                <div class="metric-row">
+
+                    <div>
+
+                        <span>
+                            CONTROL MODE
+                        </span>
+
+                        <small>
+                            Traffic management
+                        </small>
+
+                    </div>
+
+                    <strong class="cyan-text">
+                        AUTO
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ANALYTICS EVENTS
+    ================================================== -->
+
+    <section class="panel events-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-label">
+                    ANALYTICS EVENTS
+                </span>
+
+                <h2>
+                    Network Activity
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="events-list"
+            id="events-list"
+        >
+
+            <div class="event-item">
+
+                <span class="event-dot green"></span>
+
+                <div>
+
+                    <strong>
+                        Analytics engine initialized
+                    </strong>
+
+                    <small>
+                        Waiting for live network telemetry
+                    </small>
+
+                </div>
+
+                <time>
+                    NOW
+                </time>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
