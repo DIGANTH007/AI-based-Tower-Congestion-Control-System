@@ -37,7 +37,7 @@ async function loadNetworkData() {
     try {
 
         const response =
-            await fetch("http://127.0.0.1:5000/api/network");
+            await fetch("/api/network");
 
         if (!response.ok) {
             throw new Error("Network API unavailable");

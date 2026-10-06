@@ -39,7 +39,7 @@ async function loadAnalytics() {
 
         const response =
             await fetch(
-                "http://127.0.0.1:5000/api/network"
+                "/api/network"
             );
 
         if (!response.ok) {
